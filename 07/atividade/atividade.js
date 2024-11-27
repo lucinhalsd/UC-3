@@ -1,10 +1,10 @@
-function calculadora(d,e){
- return d * e;
+// function calculadora(d,e){
+//  return d * e;
 
-}
+// }
 
-let resultado=calculadora(3,6);
-alert(resposta) ;
+// let resultado=calculadora(3,6);
+// alert(resposta) ;
 
 
 function calculadora(num1, num2, operador) { 
@@ -22,6 +22,7 @@ function calculadora(num1, num2, operador) {
     } else {
         return "Operação inválida";
     }
+}
 
     function exibirresultados() {
         // Pega os dados da tela

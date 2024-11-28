@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br
+">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <h1>Eventos</h1>
+
+  <!--Evento Inline-->
+  <button onclick="alert('AAAAAAAAAAHHH')">Clique Aqui</button>
+
+  <!--Buscar Evento no JavaSript-->
+  <button id = "meubotao">Nao Click!</button>
+
+  <!--Evento OnMouseOver-->
+  <p onmouseOver = "mudatexto(this)">Passe o mouse aqui</p>
+
+  <p onmouseover="mudaOTexto(this)">Um outro Texto</p>
+
+  <!--Evento onkeydown-->
+  <input onkeydown = "mostratecla(event)" type="text">
+
+
+     <script>
+         //element.style.color = "blue";
+        const btnClick = document.getElementById("meuBotao");
+
+        btnClick.addEventListener("click", () => { 
+        alert("bbbbbbbbbbbb");
+     });
+
+     function mudaOTexto(elemento) {
+            elemento.innerText = "O mouse passou por aqui";
+        }
+
+        function mostrarTecla(event) {
+            console.log("Tecla digitada:", event.key)
+        }
+        
+       
+    </script>
+  
+   // Exercicio
+
+  <!--Evento Inline-->
+<button onclick="alert('AAAAAAAAAAHHH')">Clique Aqui</button>
+
+<!--Buscar Evento no JavaSript-->
+<button id = "meubotao">Nao Click!</button>
+
+<script>
+    const btnClick = document.getElementById("meuBotao");
+
+    btnClick.onmouseover = () => {
+            btnClick.style.background = "yellow";
+        }
+    btnClick.onmouseover = () => {
+            btnClick.style.background = "";
+        }
+
+    function mudacor(elemento) {
+            elemento.innerText = "O mouse passou por aqui";
+        }
+ 
+</script>
+
+   
+</body>
+</html>

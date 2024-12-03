@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="input textos">
+    <p id = "teclapressionada"> </p>
+
+    <script>
+       let elemento = document.getElementById("inputTextos");
+        
+        OU 
+
+      document.getElementById("input textos").onkeydown = function mostrartecla(evento){
+         document.getElementById("teclapressionada").innerText = "tecla:" +evento.key;
+        
+        }
+    </script>
+</body>
+</html>

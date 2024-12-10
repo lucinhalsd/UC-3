@@ -3,13 +3,14 @@ const addBtn = document.getElementById("addBtn");
 const listaDeTarefas = document.getElementById("listaDeTarefas");
 
 addBtn.addEventListener("click", () => {
-     if(tarefaInput.value) {
-     criartarefa(tarefaInput.value);
-    tarefaInput.value = "";
-    tarefaInput.focus();
+    let valordoinput = tarefainput.value;
+    if(valorDoInput) {
+      criarTarefa(valorDoInput);
+      tarefaInput.value = "";
+      tarefaInput.focus();
   } else {
-    alert(!"digite uma tarefa valida");
-    tarefaInput.focus();
+      alert("Digite uma tarefa válida!");
+      tarefaInput.focus();
   }
 })
 
@@ -41,7 +42,25 @@ function criartarefa(Titulo) {
    }
 })
 
+ const removebtn = document.createElement("button");
+ removeBtn.innerHTML = "<strong>🗑</strong>"
+ removebtn.addEventListener("click", () => {
+   listaDeTarefas.removeChild(li)
+ });
+
+ const divFlexLi = document.createElement("div");
+ divFlexLi.append(checkbox);
+ divFlexLi.append(textoDaTarefa);
+
+
  li.append(checkbox);
  li.append(textodatarefa) ;
+ li.append(removebtn);
  listaDeTarefas.append(li);
 }
+
+tarefaInput.addEventListener("keydown", (event) => {
+  if(event.key === "Enter") {
+    addBtn.click();
+  }
+})

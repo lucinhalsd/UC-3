@@ -1,18 +1,24 @@
-//scipt.js
+ 
+const display = document.getElementById("display");
+const buttons = document.querySelectorAll(".btn");
+const clearButton = document.getElementById("clear");
+const equalsButton = document.getElementById("equals")
 
-function appendToDisplay(value) {
-    document.getElementById('display').value += value;
-}
-
-function clearDisplay() {
-    document.getElementById('display').value = '';
-}
-
-function calculateResult() {
-    try {
-        let result = eval(document.getElementById('display').value);
-        document.getElementById('display').value = result;
-    } catch (error) {
-        document.getElementById('display').value = 'Erro';
-    }
-}
+// funçao para usar a lista de botoes marcados com a classe 'btn'
+buttons.forEach(btn => {
+    btn.addEventListener("click", () => { 
+      // atualiza o display numérico com os valores dos botões
+      display.value += btn.getAttribute("data-value");
+    })
+  });
+  
+  clearButton.addEventListener("click", () => {
+      display.value = "";
+  })
+  
+  equalsButton.addEventListener("click", () => {
+      / o valor do display utiliza a função eval()
+      // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/eval
+      // Essa função executa uma string como código JavaScript
+      display.value = eval(display.value);
+  });
